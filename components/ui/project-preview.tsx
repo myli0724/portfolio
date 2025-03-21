@@ -26,21 +26,20 @@ export function ProjectPreview({ images }: ProjectPreviewProps) {
   }))
 
   return (
-    <div className="w-full space-y-4">
-      <Carousel className="w-full">
-        <CarouselContent>
+    <div className="w-full space-y-2">
+      <Carousel className="w-full overflow-visible"> {/* 添加 overflow-visible */}
+        <CarouselContent className="-ml-2"> {/* 调整负边距 */}
           {images.map((image, index) => {
-
             return (
-              <CarouselItem key={index} className="basis-auto">
-                <div className="p-1 min-w-0 flex flex-col items-center"> {/* 改为垂直布局 */}
+              <CarouselItem key={index} className="basis-auto pl-2"> {/* 添加左侧间距 */}
+                <div className="min-w-0 flex flex-col items-center px-1"> {/* 调整水平间距 */}
                     <Image
                       src={image.url}
                       alt={image.description}
-                      height={450}
+                      height={200}
                       width={0}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="h-[450px] w-auto max-w-full object-contain transition-all hover:scale-105 cursor-pointer"
+                      sizes="(max-width: 350px) 100vw, 50vw"
+                      className="h-[200px] w-auto max-w-full object-contain transition-all hover:scale-105 cursor-pointer"
                       onClick={() => {
                         setSelectedIndex(index)
                         setOpen(true)
@@ -54,8 +53,8 @@ export function ProjectPreview({ images }: ProjectPreviewProps) {
             )
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="left-2" /> {/* 添加定位 */}
+        <CarouselNext className="right-2" /> {/* 添加定位 */}
       </Carousel>
 
       <Lightbox
