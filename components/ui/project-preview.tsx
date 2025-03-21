@@ -53,8 +53,8 @@ export function ProjectPreview({ images }: ProjectPreviewProps) {
             )
           })}
         </CarouselContent>
-        <CarouselPrevious className="left-2" /> {/* 添加定位 */}
-        <CarouselNext className="right-2" /> {/* 添加定位 */}
+        <CarouselPrevious className="hidden md:inline-flex left-1" />
+        <CarouselNext className="hidden md:inline-flex right-1" />
       </Carousel>
 
       <Lightbox
