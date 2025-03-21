@@ -4,6 +4,8 @@ import { Briefcase, Calendar, MapPin, Globe } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import AnimatedSectionHeader from "./AnimatedSectionHeader"
+import { ProjectPreview } from "@/components/ui/project-preview"
+import { projectPreviews } from "./project-preview-data"
 
 export default function Experience() {
   const experiences = [
@@ -192,6 +194,12 @@ export default function Experience() {
                     ))}
                   </ul>
                 </div>
+                {projectPreviews[exp.project] && (
+                  <div className="mt-8">
+                    <h5 className="text-lg font-medium mb-4 dark:text-gray-200">Project Preview</h5>
+                    <ProjectPreview images={projectPreviews[exp.project].images} />
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
