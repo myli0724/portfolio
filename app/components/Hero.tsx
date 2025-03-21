@@ -3,6 +3,10 @@
 import Image from "next/image"
 import { GitlabIcon as GitHub, Linkedin, Mail, ArrowDown } from "lucide-react"
 import { motion } from "framer-motion"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCards } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
 
 const CodePattern = () => (
   <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
@@ -102,19 +106,36 @@ My personal page：
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 rounded-3xl transform rotate-6 opacity-50"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 dark:from-purple-600 dark:to-blue-600 rounded-3xl transform -rotate-6 opacity-50"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/profile.jpg"
-                  alt="Zhang Jinhua"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
+            <Swiper
+              className="w-full h-full"
+              modules={[EffectCards]}
+              effect={'cards'}
+              grabCursor={true}
+              slidesPerView={'auto'}
+              initialSlide={1}
+              centeredSlides={true}
+            >
+              {[1, 2, 3].map((item) => (
+                <SwiperSlide
+                  key={item}
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                >
+                  <Image
+                    src={`https://placehold.co/640x360/ffeded/ff6060.png?text=Project+${item}`}
+                    alt={`Project ${item}`}
+                    width={640}
+                    height={360}
+                    className="object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold mb-2">项目案例 {item}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      点击滑动查看详细案例展示
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </motion.div>
         </div>
       </div>
