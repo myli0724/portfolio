@@ -10,7 +10,6 @@ import "yet-another-react-lightbox/styles.css"
 type ProjectImage = {
   url: string
   description: string
-  aspectRatio: string
 }
 
 type ProjectPreviewProps = {
@@ -31,25 +30,23 @@ export function ProjectPreview({ images }: ProjectPreviewProps) {
       <Carousel className="w-full">
         <CarouselContent>
           {images.map((image, index) => {
-            const [width, height] = image.aspectRatio.split(":")
-            const aspectRatio = parseInt(width) / parseInt(height)
 
             return (
-              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <AspectRatio ratio={aspectRatio} className="overflow-hidden rounded-lg ">
+              <CarouselItem key={index} className="basis-auto">
+                <div className="p-1 min-w-0 flex flex-col items-center"> {/* 改为垂直布局 */}
                     <Image
                       src={image.url}
                       alt={image.description}
-                      fill
-                      className="object-cover transition-all hover:scale-105 cursor-pointer"
+                      height={450}
+                      width={0}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="h-[450px] w-auto max-w-full object-contain transition-all hover:scale-105 cursor-pointer"
                       onClick={() => {
                         setSelectedIndex(index)
                         setOpen(true)
                       }}
                     />
-                  </AspectRatio>
-                  <p className="mt-2 text-sm text-center text-muted-foreground">
+                  <p className="mt-2 text-sm text-center text-muted-foreground w-full"> {/* 添加宽度控制 */}
                     {image.description}
                   </p>
                 </div>
