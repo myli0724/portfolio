@@ -7,8 +7,8 @@ import { ModeToggle } from "@/components/mode-toggle"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Usman Zafar - MERN Stack Developer",
-  description: "Portfolio of Usman Zafar, a MERN Stack Developer specializing in full-stack web applications.",
+  title: "Zhang Jinhua - Full Stack Developer",
+  description: "Portfolio of Zhang Jinhua, a Full Stack Developer specializing in full-stack web applications.",
     generator: 'v0.dev'
 }
 

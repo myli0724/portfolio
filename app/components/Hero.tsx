@@ -108,7 +108,7 @@ My personal page：
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/profile.jpg"
-                  alt="Usman Zafar"
+                  alt="Zhang Jinhua"
                   fill
                   className="object-cover"
                   priority

@@ -36,7 +36,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              As a passionate MERN Stack Developer, I specialize in building robust and scalable web applications. With
+              As a passionate Full Stack Developer, I specialize in building robust and scalable web applications. With
               a strong foundation in MongoDB, Express.js, React, and Node.js, I create seamless full-stack solutions
               that deliver exceptional user experiences.
             </p>
