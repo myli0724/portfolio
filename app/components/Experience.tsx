@@ -7,8 +7,16 @@ import AnimatedSectionHeader from "./AnimatedSectionHeader"
 import { ProjectPreview } from "@/components/ui/project-preview"
 import { projectPreviews } from "./project-preview-data"
 
+import { useState } from "react"
+import { ChevronDown, ChevronUp } from "lucide-react"
+
 export default function Experience() {
-  const experiences = [
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const handleToggle = (index: number) => {
+  setExpandedIndex(prev => prev === index ? null : index);
+};
+
+const experiences = [
     
     {
       company: "Nibble! Inc",
@@ -143,6 +151,7 @@ export default function Experience() {
             >
             
               <div className="relative z-10">
+                {/* Experience Card Header */}
                 <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="inline-block">
                   <h3 className="text-2xl font-semibold mb-2 dark:text-white flex items-center hover:text-red-600 dark:hover:text-red-400 transition-colors">
                     <Globe className="w-6 h-6 mr-2 text-red-500" />
@@ -167,6 +176,7 @@ export default function Experience() {
                   {exp.role}
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">{exp.description}</p>
+                {/* Tech Stack Section */}
                 <div className="mb-6">
                   <h5 className="text-lg font-medium mb-3 dark:text-gray-200">Tech Stack</h5>
                   <div className="flex flex-wrap gap-3">
@@ -183,23 +193,50 @@ export default function Experience() {
                     ))}
                   </div>
                 </div>
-                <div>
-                  <h5 className="text-lg font-medium mb-3 dark:text-gray-200">Key Achievements</h5>
-                  <ul className="list-none space-y-2">
-                    {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Expandable Details Section */}
+                <div className="mt-6">
+                  <button
+                    onClick={() => handleToggle(index)}
+                    className="flex items-center text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors"
+                  >
+                    <span className="mr-2">
+                      {expandedIndex === index ? 'Close Details' : 'Show Details'}
+                    </span>
+                    {expandedIndex === index ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                  </button>
+                  <motion.div
+                    id={`details-${index}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: expandedIndex === index ? 'auto' : 0,
+                      opacity: expandedIndex === index ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-6">
+                      <h5 className="text-lg font-medium mb-3 dark:text-gray-200">Key Achievements</h5>
+                      <ul className="list-none space-y-2">
+                        {exp.achievements.map((achievement, idx) => (
+                          <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start">
+                            <span className="text-red-500 mr-2">•</span>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {projectPreviews[exp.project] && (
+                      <div className="mt-8">
+                        <h5 className="text-lg font-medium mb-4 dark:text-gray-200">Project Preview</h5>
+                        <ProjectPreview images={projectPreviews[exp.project].images} />
+                      </div>
+                    )}
+                  </motion.div>
                 </div>
-                {projectPreviews[exp.project] && (
-                  <div className="mt-8">
-                    <h5 className="text-lg font-medium mb-4 dark:text-gray-200">Project Preview</h5>
-                    <ProjectPreview images={projectPreviews[exp.project].images} />
-                  </div>
-                )}
               </div>
             </motion.div>
           ))}
