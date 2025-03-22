@@ -1,7 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
+import { List, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useTheme } from "next-themes"
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -15,6 +18,8 @@ const sections = [
 
 export default function FloatingNav() {
   const [activeSection, setActiveSection] = useState("hero")
+  const [isOpen, setIsOpen] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,33 +41,55 @@ export default function FloatingNav() {
     return () => observer.disconnect()
   }, [])
 
+  const handleClick = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+    setIsOpen(false)
+  }
+
   return (
     <motion.div
-      className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50"
+      className="fixed right-4 top-20 z-50"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 1 }}
     >
-      <div className="flex flex-col gap-3">
-        {sections.map(({ id, label }) => (
-          <button
-            key={id}
-            onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
-            className="group relative flex items-center"
-            aria-label={`Scroll to ${label}`}
-          >
-            <span className="absolute right-8 px-2 py-1 rounded bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {label}
-            </span>
-            <div
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeSection === id
-                  ? "bg-red-600 dark:bg-red-500 scale-125"
-                  : "bg-gray-400 dark:bg-gray-600 hover:scale-110"
-              }`}
-            />
-          </button>
-        ))}
+      <div className="relative">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative"
+        >
+          <List className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+          <span className="sr-only">Toggle outline</span>
+        </Button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5"
+            >
+              <div className="py-1">
+                {sections.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    onClick={() => handleClick(id)}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-300 ${activeSection === id
+                      ? "text-red-600 dark:text-red-400 bg-gray-100 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   )
