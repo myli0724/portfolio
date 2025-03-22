@@ -6,6 +6,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
+import Zoom from "yet-another-react-lightbox/plugins/zoom"
 
 type ProjectImage = {
   url: string
@@ -62,6 +63,13 @@ export function ProjectPreview({ images }: ProjectPreviewProps) {
         close={() => setOpen(false)}
         index={selectedIndex}
         slides={slides}
+        plugins={[Zoom]}
+        zoom={{
+          maxZoomPixelRatio: 4,
+          zoomInMultiplier: 2,
+          wheelZoomDistanceFactor: 1000,
+          scrollToZoom: true
+        }}
       />
     </div>
   )
