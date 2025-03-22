@@ -7,9 +7,12 @@ import { ModeToggle } from "@/components/mode-toggle"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Zhang Jinhua - Full Stack Developer",
+  title: "Zhang Jinhua | Full Stack Developer",
   description: "Portfolio of Zhang Jinhua, a Full Stack Developer specializing in full-stack web applications.",
-    generator: 'v0.dev'
+  generator: 'v0.dev/nextjs/Cursor',
+  icons: {
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
+  }
 }
 
 export default function RootLayout({
