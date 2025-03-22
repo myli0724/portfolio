@@ -104,18 +104,7 @@ export default function Skills() {
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-red-50 to-neutral-100 dark:from-gray-900 dark:via-red-950 dark:to-gray-900"></div>
 
-      {/* Skill Illustrations */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="skill-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="2" />
-              <path d="M50 30 L50 70 M30 50 L70 50" stroke="currentColor" strokeWidth="2" />
-            </pattern>
-          </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#skill-pattern)" />
-        </svg>
-      </div>
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSectionHeader title="Skills & Expertise" />

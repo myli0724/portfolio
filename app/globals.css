@@ -96,6 +96,24 @@ body {
   * {
     @apply border-border;
   }
+
+  ::selection {
+    @apply bg-primary/90 text-primary-foreground;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-muted rounded-lg;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/50 rounded-lg hover:bg-muted-foreground/70 transition-colors;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
