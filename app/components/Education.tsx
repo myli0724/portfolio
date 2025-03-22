@@ -10,14 +10,15 @@ export default function Education() {
     {
       degree: "Bachelor's Degree in Computer Science Networking Egineering",
       institution: "Guangzhou University",
-      period: "2018 – 2022",
+      period: "2020.9 – 2024.6",
       achievements: [
-        "Graduated with honors",
+        "Relevant Courses: Java Programming, Database Systems, Web Development, Software Engineering",
+        "Advanced Courses: Data Structures and Algorithms, Operating Systems, Computer Networks, Network Security",
         "Specialized in Web Technologies and Artificial Intelligence",
-        "Completed capstone project on 'Intelligent Web Application for Healthcare'",
-      ],
-    },
-  ]
+        "Completed capstone project on 'Intelligent Web Application (AIGC Chatbot SaaS Platform)'",
+        "Campus Experience: Served in CS College IT Support Team and Network Center providing IT services",
+        "Contributed to school's web services development using full-stack and DevOps skills",
+      ]}]
 
   return (
     <section

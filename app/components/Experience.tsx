@@ -107,7 +107,7 @@ const experiences = [
       projectUrl: "https://about.aixcat.top",
       location: "Guangzhou (Canton), China",
       period: "2023.9 - 2024.6",
-      role: "Research Assistant in AI Lab",
+      role: "Research Assistant in AI Lab (Capstone Project)",
       description: "An experimental academic project aimed at leveraging cutting-edge Generative AI and advanced techniques (RAG, CoT, Agent, Fine-tuning) to enhance specific domain's performance (fintech, stock market, academic, medical healthcare), based on Spring Boot, Vue.js, and Python.",
       techStack: [
         { name: "Spring Boot", url: "https://spring.io/projects/spring-boot" },
