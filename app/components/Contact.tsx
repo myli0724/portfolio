@@ -73,21 +73,21 @@ export default function Contact() {
               <div className="space-y-6">
                 <a
                   href="mailto:aixcat@outlook.com"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300"
                 >
-                  <Mail className="w-6 h-6 mr-3 text-blue-600" />
+                  <Mail className="w-6 h-6 mr-3 text-red-600" />
                   aixcat@outlook.com
                 </a>
                 <a
                   href="tel:(+86) 13423538865"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300"
                 >
-                  <Phone className="w-6 h-6 mr-3 text-blue-600" />
+                  <Phone className="w-6 h-6 mr-3 text-red-600" />
                   (+86) 13423538865
                 </a>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <MapPin className="w-6 h-6 mr-3 text-blue-600" />
-                  Canton, China
+                  <MapPin className="w-6 h-6 mr-3 text-red-600" />
+                  Guangzhou(Canton), China
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                     type="text"
                     className={`w-full px-4 py-2 rounded-md border ${
                       errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                    } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                   />
                   {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
                 </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                     type="email"
                     className={`w-full px-4 py-2 rounded-md border ${
                       errors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                    } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
                 </div>
@@ -137,7 +137,7 @@ export default function Contact() {
                   type="text"
                   className={`w-full px-4 py-2 rounded-md border ${
                     errors.subject ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                  } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                 />
                 {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>}
               </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                   rows={4}
                   className={`w-full px-4 py-2 rounded-md border ${
                     errors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                  } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                 ></textarea>
                 {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>}
               </div>

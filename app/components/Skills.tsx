@@ -121,7 +121,7 @@ export default function Skills() {
                 <div className="flex items-center mb-4">
                   <SkillIcon icon={skill.icon} color={skill.color} />
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-lg font-semibold dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300">
                       {skill.name}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{skill.tech}</p>

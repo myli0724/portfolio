@@ -57,7 +57,7 @@ export default function FloatingNav() {
             <div
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 activeSection === id
-                  ? "bg-blue-600 dark:bg-blue-400 scale-125"
+                  ? "bg-red-600 dark:bg-red-400 scale-125"
                   : "bg-gray-400 dark:bg-gray-600 hover:scale-110"
               }`}
             />

@@ -8,7 +8,7 @@ export default function About() {
   const skills = [    
     { icon: <Server className="w-8 h-8 text-green-500" />, title: "Backend", description: "Java, Spring Boot, Node.js, Microservice" },
 
-    { icon: <Code className="w-8 h-8 text-blue-500" />, title: "Frontend", description: "React, Next.js, Vue.js" },
+    { icon: <Code className="w-8 h-8 text-red-500" />, title: "Frontend", description: "React, Next.js, Vue.js" },
     { icon: <Database className="w-8 h-8 text-purple-500" />, title: "Database", description: "MySQL, PostgreSQl, MongoDB" },
     { icon: <Zap className="w-8 h-8 text-yellow-500" />, title: "Performance", description: "MQ, Redis Caching" },
     {
