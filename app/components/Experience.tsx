@@ -26,7 +26,7 @@ const experiences = [
       location: "Remote (Part-time)",
       period: "2024 - Present",
       role: "Freelancer (Full Stack Software developer)",
-      description: "A hotel and bar reservation management SaaS platform co-developed and operated with Hope & Sesame (庙前冰室) for Guangzhou Nibble Technology Co., Ltd.",
+      description: "A hotel and bar reservation management SaaS platform co-developed and operated with Hope & Sesame (庙前冰室) and Guangzhou Nibble Technology Co., Ltd.(Startup)",
       techStack: [
         { name: "React", url: "https://react.dev" },
         { name: "Next.js", url: "https://nextjs.org" },
@@ -35,10 +35,10 @@ const experiences = [
         { name: "PostgreSQL", url: "https://www.postgresql.org" },
         { name: "Drizzle ORM", url: "https://orm.drizzle.team" },
         { name: "Ant Design", url: "https://ant.design" },
-        { name: "DnD Kit", url: "https://dndkit.com" }
+        { name: "dnd Kit", url: "https://dndkit.com" }
       ],
       achievements: [
-        "Utilized the AI-driven IDE *Cursor* to accelerate MVP prototyping",
+        "Utilized the AI-driven IDE Cursor to accelerate MVP prototyping(Vibe Coding)",
         "Optimized and improved UI/UX design, including animations and landing page styling with SSR (Server-Side Rendering).Enhanced mobile responsiveness for improved user experience",
         "Implemented visual order queue management using DnD Kit drag-and-drop components",
         "Integrated QR code functionality with coupon management",
@@ -72,7 +72,7 @@ const experiences = [
         "Integrated an AI-powered assistant using RAG and Qdrant to build an internal knowledge base and AI agent workflows, supporting tasks such as meeting transcription (Whisper ASR), Email communication, and WhatsApp community engagement via Dify AI Agent",
         "Enhanced content creation workflows with AI-driven rich text editing and copywriting support",
         "Delivered business insights through BI visualizations integrated with AI agents, leveraging Vercel AI SDK for generative UI",
-        "Implemented multi-tenant architecture to support multiple clients with isolated environments"
+        "Implemented multi-tenant architecture to support multiple clients with isolated environments(On Going)"
       ]
     },{
       company: "Guangzhou Bidi Data Technology Co., Ltd.",

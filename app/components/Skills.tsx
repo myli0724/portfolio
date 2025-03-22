@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, Layout, GitBranch, Terminal, Layers, Cpu, Globe, Workflow } from "lucide-react"
+import { Code, Database, Server, Layout, GitBranch, Terminal, Layers, Cpu, Globe, Workflow, BrainCircuit } from "lucide-react"
 import AnimatedSectionHeader from "./AnimatedSectionHeader"
 
 const SkillIcon = ({ icon: Icon, color }: { icon: any; color: string }) => (
@@ -12,76 +12,90 @@ const SkillIcon = ({ icon: Icon, color }: { icon: any; color: string }) => (
 
 const skills = [
   {
+    icon: Server,
+    name: "Backend Development",
+    tech: "Java, Spring, Node.js, Express",
+    description: "Creating robust server-side applications with focus on scalability and clean architecture.",
+    color: "text-red-600",
+  },
+  {
     icon: Code,
     name: "Frontend Development",
-    tech: "React.js, Next.js",
+    tech: "React.js, Next.js, Vue.js",
     description:
       "Building responsive and interactive user interfaces with modern React features and Next.js for optimal performance.",
     color: "text-red-500",
   },
   {
-    icon: Server,
-    name: "Backend Development",
-    tech: "Node.js, Express, Fastify",
-    description: "Creating robust server-side applications with focus on scalability and clean architecture.",
-    color: "text-red-600",
-  },
-  {
     icon: Database,
     name: "Database Management",
-    tech: "MongoDB, Mongoose",
+    tech: "MySQl, PostgreSQL, MongoDB",
     description: "Designing and implementing efficient database schemas and queries for optimal data management.",
     color: "text-red-700",
   },
   {
     icon: Layout,
     name: "UI/UX Design",
-    tech: "Tailwind CSS, Material UI",
+    tech: "Tailwind CSS, Shadcn UI",
     description: "Crafting beautiful and intuitive user interfaces with modern design principles and frameworks.",
     color: "text-red-800",
   },
   {
     icon: GitBranch,
     name: "Version Control",
-    tech: "Git, GitHub",
+    tech: "Git, GitHub/Gitlab",
     description: "Managing code versions efficiently with Git and collaborating effectively through GitHub.",
     color: "text-red-900",
   },
   {
-    icon: Terminal,
-    name: "TypeScript",
-    tech: "TypeScript, JavaScript",
-    description: "Writing type-safe code for better maintainability and developer experience.",
-    color: "text-rose-500",
-  },
-  {
-    icon: Layers,
-    name: "State Management",
-    tech: "Redux, Context API",
-    description: "Managing complex application state with modern state management solutions.",
-    color: "text-rose-600",
-  },
-  {
     icon: Cpu,
     name: "API Development",
-    tech: "REST, GraphQL",
+    tech: "REST, gRPC",
     description: "Designing and implementing efficient APIs for seamless data communication.",
     color: "text-rose-700",
   },
   {
     icon: Globe,
-    name: "Web Performance",
-    tech: "Optimization, SEO",
-    description: "Optimizing web applications for speed, accessibility, and search engine visibility.",
-    color: "text-rose-800",
+    name: "Cloud Computing",
+    tech: "AWS, GCP, Azure, Cloudflare",
+    description: "Deploying and managing applications in the cloud for scalability and reliability.",
+    color: "text-rose-500",
+  },
+  {
+    icon: Layers,
+    name: "Containerization",
+    tech: "Docker, Kubernetes",
+    description: "Containerizing applications for consistent deployment and scaling.",
+    color: "text-rose-700",
+  },
+  {
+    icon: Terminal,
+    name: "Command Line",
+    tech: "Linux, Bash",
+    description: "Proficient in command-line operations for system administration and automation.",
+    color: "text-rose-900",
   },
   {
     icon: Workflow,
-    name: "Agile Methodologies",
-    tech: "Scrum, Kanban",
-    description: "Working efficiently in agile environments with focus on continuous delivery.",
+    name: "DevOps",
+    tech: "CI/CD, GitHub Actions, Jenkins",
+    description: "Automating software delivery processes for efficient deployment and scalability.",
+    color: "text-rose-800",
+  },
+  {
+    icon: BrainCircuit ,
+    name: "ML/AI",
+    tech: "TensorFlow, PyTorch, LLM",
+    description: "Training and deploying machine learning models for various applications.",
     color: "text-rose-900",
   },
+  {
+    icon: Code,
+    name: "Language",
+    tech: "Java, Python, C/C++, JavaScript, Go",
+    description: "Proficient in various programming languages for diverse application development.",
+    color: "text-rose-500",
+  }
 ]
 
 export default function Skills() {
