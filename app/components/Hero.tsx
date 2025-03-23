@@ -170,19 +170,21 @@ export default function Hero() {
               {[1, 2, 3].map((item) => (
                 <SwiperSlide
                   key={item}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden max-w-[280px] mx-auto" // 添加最大宽度限制"
                 >
+                  <div className="relative aspect-square"> {/* 新增宽高比容器 */}
                   <Image
-                    src={`https://placehold.co/640x360/ffeded/ff6060.png?text=Project+${item}`}
+                    src={`https://pic.aixcat.top/file/1742749839785_image.png`}
                     alt={`Project ${item}`}
-                    width={640}
-                    height={360}
-                    className="object-cover"
+                    fill 
+                    className="object-contain p-2" // 改为 contain 并添加内边距
+                    sizes="(max-width: 280px) 90vw, 20vw" // 添加响应式尺寸
                   />
+                  </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-2">项目案例 {item}</h3>
+                    <h3 className="text-lg font-semibold mb-2"></h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      点击滑动查看详细案例展示
+                      Zenvar
                     </p>
                   </div>
                 </SwiperSlide>
