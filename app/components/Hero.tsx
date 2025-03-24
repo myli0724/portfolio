@@ -84,7 +84,7 @@ export default function Hero() {
               <a
                 data-tooltip-id="tooltip"
                 data-tooltip-content="LinkedIn"
-                href="https://www.linkedin.com/in/%E8%BF%9B%E5%8D%8E-%E5%BC%A0-69896b286/"
+                href="https://www.linkedin.com/in/jinhua-zhang-69896b286/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
