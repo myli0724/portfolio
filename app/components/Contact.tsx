@@ -72,11 +72,11 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold mb-6 dark:text-white">Contact Information</h3>
               <div className="space-y-6">
                 <a
-                  href="mailto:aixcat@outlook.com"
+                  href="mailto:acatmad@outlook.com"
                   className="flex items-center text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300"
                 >
                   <Mail className="w-6 h-6 mr-3 text-red-600" />
-                  aixcat@outlook.com
+                  acatmad@outlook.com
                 </a>
                 <a
                   href="tel:(+86) 13423538865"

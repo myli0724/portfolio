@@ -8,6 +8,7 @@ import { EffectCards } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { Tooltip } from 'react-tooltip'
+import { projects } from '@/src/data/projects';
 
 const CodePattern = () => (
   <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
@@ -35,10 +36,7 @@ export default function Hero() {
       id="hero"
       className="min-h-screen relative overflow-hidden bg-gradient-to-br from-neutral-50 via-red-50 to-neutral-100 dark:from-gray-900 dark:via-red-950 dark:to-gray-900"
     >
-      {/* Programming-themed Background */}
-      <div className="absolute inset-0 z-0">
-        <CodePattern />
-      </div>
+      
 
       {/* Animated Gradient */}
       <div className="absolute inset-0 z-0 opacity-30">
@@ -97,7 +95,7 @@ export default function Hero() {
               <a
                 data-tooltip-id="tooltip"
                 data-tooltip-content="Email"
-                href="mailto:aixcat@outlook.com"
+                href="mailto:acatmad@outlook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
@@ -152,6 +150,8 @@ export default function Hero() {
             </motion.button>
           </motion.div>
 
+
+
           <motion.div
             className="lg:w-1/2"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -167,24 +167,24 @@ export default function Hero() {
               initialSlide={0}
               centeredSlides={true}
             >
-              {[1, 2, 3].map((item) => (
+              {projects.map((project) => (
                 <SwiperSlide
-                  key={item}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden max-w-[280px] mx-auto" // 添加最大宽度限制"
+                  key={project.id}
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden max-w-[280px] mx-auto"
                 >
-                  <div className="relative aspect-square"> {/* 新增宽高比容器 */}
-                  <Image
-                    src={`https://pic.aixcat.top/file/1742749839785_image.png`}
-                    alt={`Project ${item}`}
-                    fill 
-                    className="object-contain p-2" // 改为 contain 并添加内边距
-                    sizes="(max-width: 280px) 90vw, 20vw" // 添加响应式尺寸
-                  />
+                  <div className="relative aspect-square">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-contain p-2"
+                      sizes="(max-width: 280px) 90vw, 20vw"
+                    />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-2"></h3>
+                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Zenvar
+                      {project.description}
                     </p>
                   </div>
                 </SwiperSlide>
