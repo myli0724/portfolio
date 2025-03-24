@@ -12,25 +12,50 @@ export default function Services() {
     {
       title: "Portfolio Website",
       description: "Modern personal portfolio built with Next.js and Tailwind CSS",
-      githubUrl: "https://github.com/username/portfolio",
-      imageUrl: "/placeholder-project1.jpg",
+      githubUrl: "https://github.com/myli0724/portfolio/",
+      imageUrl: "https://pic.aixcat.top/file/1742751053868_image.png",
       techStacks: ["Next.js", "TypeScript", "Tailwind CSS"],
       linkType: "github"
     },
     {
+      title: "HSBC Job Application Web Crawler",
+      description: "Web crawler for HSBC job application, built with Python and Scrapy",
+      githubUrl: "https://github.com/zenvar/HSBC",
+      imageUrl:"https://pic.aixcat.top/file/1742798812298_image.png",
+      techStacks: ["Python", "Scrapy"],
+      linkType: "github"
+    },
+    {
+      title:"Middle school alumni website",
+      description: "A website for middle school alumni to share their experiences and memories.",
+      githubUrl: "https://alumni-directory.vercel.app/",
+      imageUrl:  "https://pic.aixcat.top/file/1742800216916_image.png",
+      techStacks: ["React", "Next.js", "Tailwind CSS"],
+      linkType: "link"
+
+    },
+    {
+      title: "Web3 Scraping",
+      description: "This project is a TypeScript + Pupp eteer blog scraper designed to extract article links and details from a specified blog. It connects to a MongoDB database to store the scraped data.",
+      githubUrl: "https://github.com/zenvar/puppeteer",
+      imageUrl:"https://pic.aixcat.top/file/1742799732115_image.png",
+      techStacks: ["TypeScript", "Puppeteer"],
+      linkType: "github"
+    },
+    {
       title: "E-commerce App",
-      description: "Full-stack e-commerce application built with React, Redux, and Node.js",
-      githubUrl:  "URL_ADDRESS.com/username/ecommerce-app",
-      imageUrl: "/placeholder-project2.jpg",
-      techStacks: ["React", "Redux", "Node.js"],
+      description: " An E-commerce online shopping mall based on theSpringCloud Alibabamicroservice architecture to handle high-concurrency&high traffic scenarios and ensure inventory consistency.",
+      githubUrl:  "",
+      imageUrl: "https://pic.aixcat.top/file/1742751563753_image.png",
+      techStacks: ["Spring Cloud", "Redis-MySQL", "RocketMQ"],
       linkType: "link"
     },
     {
       title: "Blog Platform",
-      description: "Full-stack blog platform built with Next.js, GraphQL, and MongoDB",
-      githubUrl: "",
-      imageUrl: "/placeholder-project2.jpg",
-      techStacks: ["React", "Redux", "Node.js"],
+      description: " A Vue+ SpringBoot+MySQLbasedpersonalblogplatform. TheBlog page renders articlesin Markdown format and supports user comments and asynchronous notifications. The Dashboard manages content &user permissions.",
+      githubUrl: "https://blog.aixcat.top/",
+      imageUrl: "https://pic.aixcat.top/file/1742751661866_image.png",
+      techStacks: ["Spring Boot", "Vue.js", "MySQL"],
       linkType: "link"
     },
   ]
@@ -48,7 +73,7 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Featured Projects
+           Projects List
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -61,7 +86,7 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="relative w-full md:w-1/3 aspect-video rounded-lg overflow-hidden">
+                <div className="relative w-full md:w-1/3 h-48 rounded-lg overflow-hidden">
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
