@@ -141,7 +141,7 @@ export default function Hero() {
               </a>
             </div>
             <motion.button
-              onClick={() => window.open('https://pic.aixcat.top/file/1742632006523_ZhangJinhua-GZHU-EN&CH-13423538865.pdf', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-900 text-white rounded-full hover:from-red-700 [animation:pulse_3s_cubic-bezier(0.4,0,0.6,1)_infinite] hover:to-red-950 transition-all duration-300 shadow-lg hover:shadow-xl"
+              onClick={() => window.open('https://pic.aixcat.top/file/1742884738622_ZhangJinhua-FullStack-13423538865.pdf', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-900 text-white rounded-full hover:from-red-700 [animation:pulse_3s_cubic-bezier(0.4,0,0.6,1)_infinite] hover:to-red-950 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

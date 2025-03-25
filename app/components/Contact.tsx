@@ -9,10 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  content: z.string().min(10, "Message must be at least 10 characters"),
 })
 
 type FormData = z.infer<typeof formSchema>
@@ -33,8 +31,18 @@ export default function Contact() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true)
     try {
-      // Here you would typically send the form data to your backend
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
       setSubmitSuccess(true)
       reset()
       setTimeout(() => setSubmitSuccess(false), 3000)
@@ -100,59 +108,31 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <form onSubmit={handleSubmit(onSubmit)} className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Name
-                  </label>
-                  <input
-                    {...register("name")}
-                    type="text"
-                    className={`w-full px-4 py-2 rounded-md border ${
-                      errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
-                  />
-                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Email
-                  </label>
-                  <input
-                    {...register("email")}
-                    type="email"
-                    className={`w-full px-4 py-2 rounded-md border ${
-                      errors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
-                  />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
-                </div>
-              </div>
-              <div className="mt-6">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Subject
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Email  (I will reply you back via this email)
                 </label>
                 <input
-                  {...register("subject")}
-                  type="text"
+                  {...register("email")}
+                  type="email"
                   className={`w-full px-4 py-2 rounded-md border ${
-                    errors.subject ? "border-red-500" : "border-gray-300 dark:border-gray-600"
+                    errors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"
                   } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                 />
-                {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>}
+                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
               </div>
               <div className="mt-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
+                <label htmlFor="content" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Content
                 </label>
                 <textarea
-                  {...register("message")}
+                  {...register("content")}
                   rows={4}
                   className={`w-full px-4 py-2 rounded-md border ${
-                    errors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"
+                    errors.content ? "border-red-500" : "border-gray-300 dark:border-gray-600"
                   } focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white`}
                 ></textarea>
-                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>}
+                {errors.content && <p className="mt-1 text-sm text-red-500">{errors.content.message}</p>}
               </div>
               <div className="mt-6">
                 <button
