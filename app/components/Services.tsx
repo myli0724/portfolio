@@ -28,7 +28,7 @@ export default function Services() {
     {
       title:"Middle school alumni website",
       description: "A website for middle school alumni to share their experiences and memories.",
-      githubUrl: "https://alumni-directory.vercel.app/",
+      githubUrl: "https://alumni.aixcat.top",
       imageUrl:  "https://pic.aixcat.top/file/1742800216916_image.png",
       techStacks: ["React", "Next.js", "Tailwind CSS"],
       linkType: "link"
