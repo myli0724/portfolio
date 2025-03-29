@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 export default function Education() {
   const education = [
     {
-      degree: "Bachelor's Degree in Computer Science Networking Egineering",
+      degree: "Bachelor's Degree in Computer Science Networking Engineering",
       institution: "Guangzhou University",
       period: "2020.9 – 2024.6",
       achievements: [
